@@ -1,11 +1,6 @@
--- ============================================================
--- Exercicio_2 — Compra Online
--- ============================================================
-
 CREATE DATABASE IF NOT EXISTS compraonline;
 USE compraonline;
 
--- Cadastro de cada cliente
 CREATE TABLE IF NOT EXISTS pessoa (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -13,7 +8,6 @@ CREATE TABLE IF NOT EXISTS pessoa (
     endereco VARCHAR(200) NOT NULL
 );
 
--- Produtos disponíveis para compra
 CREATE TABLE IF NOT EXISTS produtos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -21,7 +15,6 @@ CREATE TABLE IF NOT EXISTS produtos (
     marca VARCHAR(100) NOT NULL
 );
 
--- Registro de cada compra realizada
 CREATE TABLE IF NOT EXISTS compra (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
@@ -30,8 +23,6 @@ CREATE TABLE IF NOT EXISTS compra (
     FormaDePagamento VARCHAR(20) NOT NULL,
     FOREIGN KEY (id_cliente) REFERENCES pessoa(id)
 );
-
--- Produtos iniciais do sistema
 INSERT INTO produtos (nome, preco_unitario, marca) VALUES
 ('Camiseta Básica', 49.90, 'Hering'),
 ('Calça Jeans', 129.90, 'Levi\'s'),
