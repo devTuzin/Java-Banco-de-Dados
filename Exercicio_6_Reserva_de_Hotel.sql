@@ -1,11 +1,7 @@
--- ============================================================
--- Exercicio_6 — Reserva de Hotel
--- ============================================================
 
 CREATE DATABASE IF NOT EXISTS sistemareservahotel;
 USE sistemareservahotel;
 
--- Cadastro de cada quarto do hotel
 CREATE TABLE IF NOT EXISTS Quartos (
     idQuarto INT AUTO_INCREMENT PRIMARY KEY,
     numero INT NOT NULL,
@@ -14,7 +10,6 @@ CREATE TABLE IF NOT EXISTS Quartos (
     diasEstadia INT NOT NULL DEFAULT 1
 );
 
--- Registro de cada reserva realizada
 CREATE TABLE IF NOT EXISTS Chekin (
     idChekin INT AUTO_INCREMENT PRIMARY KEY,
     nomeCliente VARCHAR(100) NOT NULL,
